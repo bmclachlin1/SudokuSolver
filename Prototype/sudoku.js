@@ -12,9 +12,7 @@ let board = [
 
 print();
 
-solve(0,0);
-
-
+solve(0, 0);
 
 function validMove(x, y, val) {
     // check if conflict in row
@@ -36,9 +34,8 @@ function validMove(x, y, val) {
     let yt = Math.floor(y / 3) * 3;
 
     // check 3x3 square
-    for (let i = 0; i < 9; i++) {
-        for (let j = 0; j < 9; j++) {
-            console.log((xt+i) + " " + (yt+j));
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
             if (board[xt + i][yt + j] === val) {
                 return false;
             }
@@ -50,7 +47,6 @@ function validMove(x, y, val) {
 }
 
 function solve(x, y) {
-    console.log('x: ' + x + ' y: ' + y);
     // finished
     if (x === 8 && y === 9) {
         print();
