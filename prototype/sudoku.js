@@ -10,12 +10,15 @@ let board = [
     [0,0,0,0,8,0,0,0,0]
 ];
 
+console.log('Start Configuration\n');
+
 print();
+
+console.log('Solutions\n');
 
 solve(0, 0);
 
 function validMove(x, y, val) {
-    // console.log('x: ' + x + ' y: ' + y);
     // check if conflict in row
     for (let j = 0; j < 9; j++) {
         if (board[x][j] === val) {
@@ -51,7 +54,6 @@ function solve(x, y) {
     // finished
     if (x === 8 && y === 9) {
         print();
-        throw new Error("Something went badly wrong!");
         return;
     }
 
@@ -64,6 +66,7 @@ function solve(x, y) {
     // check if this space is already filled.
     if (board[x][y] != 0) {
         solve(x, y + 1);
+        return;
     }
 
     // try values 1 through 9
@@ -84,11 +87,18 @@ function solve(x, y) {
 
 function print() {
     for (let i = 0; i < 9; i++) {
+        if (i % 3 === 0 && i != 0) {
+            console.log('- - - - - - - - - - - -');
+        }
         for (let j = 0; j < 9; j++) {
+            if (j % 3 === 0 && j != 0) {
+                process.stdout.write(' | ');
+            }
             process.stdout.write(board[i][j] + ' ');
         }
         process.stdout.write('\n');
     }
+    process.stdout.write('\n\n');
 }
 
 // validate the board --> function validate()
