@@ -1,3 +1,5 @@
+const {performance} = require('perf_hooks');
+
 let board = [
     [5,3,0,0,7,0,0,0,0],
     [6,0,0,1,9,5,0,0,0],
@@ -16,7 +18,15 @@ print();
 
 console.log('Solutions\n');
 
+let start = performance.now();
+
 solve(0, 0);
+
+let end = performance.now();
+
+let timeElapsed = (end - start) / 1000;
+
+console.log('Took ' + timeElapsed.toFixed(5) + ' seconds.');
 
 function validMove(x, y, val) {
     // check if conflict in row
@@ -88,11 +98,11 @@ function solve(x, y) {
 function print() {
     for (let i = 0; i < 9; i++) {
         if (i % 3 === 0 && i != 0) {
-            console.log('- - - - - - - - - - - -');
+            console.log('---------------------');
         }
         for (let j = 0; j < 9; j++) {
             if (j % 3 === 0 && j != 0) {
-                process.stdout.write(' | ');
+                process.stdout.write('| ');
             }
             process.stdout.write(board[i][j] + ' ');
         }
