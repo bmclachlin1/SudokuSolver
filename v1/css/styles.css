@@ -1,3 +1,28 @@
-body {
-    /* background: lightgray; */
+* {
+    box-sizing: border-box;
+}
+
+#board {
+    table-layout: fixed;
+    width: 80%;
+    margin: 6px auto;
+    border: 2px solid gray;
+    border-collapse: collapse;
+}
+
+#board td {
+    width: 11.11%;
+    float: left;
+    text-align: center; 
+    overflow: hidden; 
+    border: 0.2px solid gray;
+    padding: 0px;
+}
+
+#board td:nth-child(3n):not(:last-child) {
+    border-right: 4px solid black;
+}
+
+#board tr:nth-child(3n):not(:last-child) {
+    border-bottom: 4px solid black;
 }
