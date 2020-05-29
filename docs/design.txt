@@ -1,0 +1,18 @@
+As part of Summer of Shipping 2020
+
+Author(s): Blake McLachlin
+
+Last Revised: May 28, 2020
+
+Project Proposal: To make an interactive sudoku solver web application. Should have a clean UI and be reasonably fast (good algorithm).
+
+Languages: HTML5, CSS3, JavaScript, might refactor to use React.js in the future
+
+Solution: Uses a backtracking algorithm to solve the sudoku board. Will have the logic for the algorithm in a scripts.js file and have it interact with the DOM.
+
+Versions:   Prototype (May 17, 2020) --> First attempt at implementing the backtracking algorithm using just vanilla js                        
+
+            V1        (Current)      --> First attempt to integrate the algorithm into an interactive web app using just HTML, CSS, and JavaScript
+
+Project Management tools: git, GitHub
+
