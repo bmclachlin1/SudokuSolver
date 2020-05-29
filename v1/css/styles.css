@@ -2,20 +2,26 @@
     box-sizing: border-box;
 }
 
+/* input {
+    margin: 0px auto;
+} */
+
 #board {
     table-layout: fixed;
     width: 80%;
     margin: 6px auto;
-    border: 2px solid gray;
+    border: 4px solid black;
     border-collapse: collapse;
+    text-align: center;
 }
 
 #board td {
     width: 11.11%;
+    height: 11.11%;
     float: left;
     text-align: center; 
     overflow: hidden; 
-    border: 0.2px solid gray;
+    border: 0.2px solid #606060;
     padding: 0px;
 }
 
